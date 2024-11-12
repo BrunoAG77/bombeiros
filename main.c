@@ -2,6 +2,7 @@
 // Gabriel Lazareti Cardoso | 10417353 
 // Guilherme Martins Silva | 10417140 
 // Ismael de Sousa e Silva | 10410870 
+// Vídeo do Projeto: https://youtu.be/CpPgnb_7-Gc
 // Referência: https://www.youtube.com/watch?v=pWrNOkw50As&pp=ygUNZGppa3N0cmEgZW0gYw%3D%3D
 // Referência: https://www.youtube.com/watch?v=5y8dch2uHR4&pp=ygUNZGppa3N0cmEgZW0gYw%3D%3D
 // Referência: https://www.youtube.com/watch?v=yrMnrJzgJg4
@@ -54,7 +55,7 @@ void RotaMaisRapida(int mapa[MAX_ESQ][MAX_ESQ], int inicio, int fim, int n_esq, 
 }
 
 int main(void){
-  FILE *filein = fopen("bombeiro.txt","r"); //Leitura do arquivo de entrada
+   FILE *filein = fopen("bombeiro.txt","r"); //Leitura do arquivo de entrada
   if (filein == NULL){
     printf("Erro ao abrir o arquivo.");
     return 1;
@@ -64,8 +65,8 @@ int main(void){
     printf("Erro ao abrir o arquivo.");
     return 1;
   }
-  int loc_incendio, n_esq, esq1, esq2, tempo;
   int mapa[MAX_ESQ][MAX_ESQ];
+  int loc_incendio, n_esq, esq1, esq2, tempo;
   for (int i = 0; i < n_esq; i++){ //Inicializa o mapa e com 0 para o mesmo e infinito para o resto
     for (int k = 0; k < n_esq; k++){
       if (i == k) mapa[i][k] = 0;
@@ -82,4 +83,5 @@ int main(void){
   printf("---Bombeiros---");
   RotaMaisRapida(mapa, 0, loc_incendio - 1, n_esq, fileout);
   fclose(fileout);
+
 }
